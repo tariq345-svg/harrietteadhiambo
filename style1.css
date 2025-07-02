@@ -1,0 +1,406 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    color: #1a1a1a;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin: 40px 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.centered-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: -0.02em;
+}
+
+.timeline {
+    position: relative;
+    background: white;
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    margin: 2rem auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    backdrop-filter: blur(10px);
+}
+
+time.icon {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+    overflow: hidden;
+    top: 20px;
+    z-index: 3;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 4px solid white;
+}
+
+time.icon * {
+    display: block;
+    width: 100%;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    line-height: 1;
+}
+
+.text-md {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.text-sm {
+    font-size: 0.7rem;
+    opacity: 0.9;
+}
+
+.timeline-row:nth-child(odd) time.icon {
+    left: -40px;
+}
+
+.timeline-row:nth-child(even) time.icon {
+    right: -40px;
+}
+
+.timeline:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    z-index: 1;
+}
+
+.timeline-row {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+.timeline-item {
+    position: relative;
+    width: 45%;
+    padding: 0;
+    z-index: 2;
+}
+
+.timeline-content-wrapper {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-content-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.timeline-content-wrapper:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+}
+
+.timeline-row:nth-child(odd) .timeline-item {
+    margin-right: auto;
+    margin-left: calc(50% + 60px);
+}
+
+.timeline-row:nth-child(even) .timeline-item {
+    margin-left: auto;
+    margin-right: calc(50% + 60px);
+}
+
+.timeline-content-wrapper h2 {
+    font-size: 1.4rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.timeline-content-wrapper h2 i {
+    color: #667eea;
+    font-size: 1.2rem;
+}
+
+.timeline-content-wrapper h3 {
+    font-size: 1.1rem;
+    color: #667eea;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.timeline-content {
+    margin-top: 1rem;
+}
+
+.timeline-content p {
+    color: #6b7280;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.timeline-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.timeline-content ul li {
+    color: #374151;
+    padding: 0.25rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.timeline-content ul li:before {
+    content: "•";
+    color: #667eea;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.timeline-point {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: 4px solid #667eea;
+    border-radius: 50%;
+    top: 50px;
+    z-index: 3;
+}
+
+.timeline-row:nth-child(odd) .timeline-point {
+    left: calc(50% - 8px);
+}
+
+.timeline-row:nth-child(even) .timeline-point {
+    right: calc(50% - 8px);
+}
+
+/* Position Details Styling */
+.position-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.duration {
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.9rem;
+}
+
+.location {
+    font-weight: 500;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* Content Section Styling */
+.overview {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(248, 249, 250, 0.8);
+    border-radius: 12px;
+    border-left: 4px solid #10b981;
+}
+
+.overview p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #374151;
+    margin: 0;
+}
+
+.research-focus,
+.key-achievements,
+.technical-skills,
+.project-leadership,
+.research-impact,
+.technical-expertise,
+.technical-achievements,
+.key-projects,
+.project-achievements,
+.technical-outputs {
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    border-left: 3px solid #667eea;
+}
+
+.research-focus h4,
+.key-achievements h4,
+.technical-skills h4,
+.project-leadership h4,
+.research-impact h4,
+.technical-expertise h4,
+.technical-achievements h4,
+.key-projects h4,
+.project-achievements h4,
+.technical-outputs h4 {
+    color: #1f2937;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.research-focus h4 i,
+.key-achievements h4 i,
+.technical-skills h4 i,
+.project-leadership h4 i,
+.research-impact h4 i,
+.technical-expertise h4 i,
+.technical-achievements h4 i,
+.key-projects h4 i,
+.project-achievements h4 i,
+.technical-outputs h4 i {
+    color: #667eea;
+    font-size: 1rem;
+}
+
+.timeline-content ul li strong {
+    color: #1f2937;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .position-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .overview,
+    .research-focus,
+    .key-achievements,
+    .technical-skills,
+    .project-leadership,
+    .research-impact,
+    .technical-expertise,
+    .technical-achievements,
+    .key-projects,
+    .project-achievements,
+    .technical-outputs {
+        padding: 1rem;
+    }
+    
+    .header {
+        margin: 20px 0;
+        padding: 1.5rem;
+    }
+    
+    .centered-text {
+        font-size: 2rem;
+    }
+    
+    .timeline {
+        padding: 2rem 1rem;
+        margin: 1rem auto;
+    }
+    
+    .timeline:after {
+        left: 30px;
+        transform: none;
+    }
+    
+    .timeline-row {
+        margin-bottom: 40px;
+    }
+    
+    .timeline-item {
+        width: calc(100% - 80px);
+        margin-left: 80px !important;
+        margin-right: 0 !important;
+    }
+    
+    .timeline-row:nth-child(odd) .timeline-item,
+    .timeline-row:nth-child(even) .timeline-item {
+        margin-left: 80px !important;
+        margin-right: 0 !important;
+    }
+    
+    time.icon {
+        left: -10px !important;
+        right: auto !important;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .text-md {
+        font-size: 0.8rem;
+    }
+    
+    .text-sm {
+        font-size: 0.6rem;
+    }
+    
+    .timeline-point {
+        left: 22px !important;
+        right: auto !important;
+    }
+    
+    .timeline-content-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .timeline-content-wrapper h2 {
+        font-size: 1.2rem;
+    }
+    
+    .timeline-content-wrapper h3 {
+        font-size: 1rem;
+    }
+}
