@@ -125,6 +125,8 @@ if (skillSection) {
 
 // Add smooth hover effects for interactive elements
 document.addEventListener('DOMContentLoaded', function() {
+  // Initialize water theme effects
+  initWaterThemeEffects();
   // Add click effects to buttons
   const buttons = document.querySelectorAll('button');
   buttons.forEach(button => {
@@ -215,7 +217,7 @@ window.addEventListener('orientationchange', () => {
 
 // Touch-friendly hover effects for mobile
 function addTouchSupport() {
-  const touchElements = document.querySelectorAll('.project .card, .skill-category, .pub-item, .blog-post');
+  const touchElements = document.querySelectorAll('.project .card, .skill-category, .pub-item, .blog-post, .tool-item');
   
   touchElements.forEach(element => {
     element.addEventListener('touchstart', function() {
@@ -227,6 +229,28 @@ function addTouchSupport() {
         this.classList.remove('touch-active');
       }, 150);
     });
+  });
+}
+
+// Water theme specific animations
+function initWaterThemeEffects() {
+  // Animate wave dividers with slight delay for better effect
+  const waveDividers = document.querySelectorAll('.wave-divider');
+  waveDividers.forEach((wave, index) => {
+    wave.style.opacity = '0';
+    wave.style.transform = 'translateY(20px)';
+    wave.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    
+    setTimeout(() => {
+      wave.style.opacity = '1';
+      wave.style.transform = 'translateY(0)';
+    }, 300 + (index * 200));
+  });
+  
+  // Enhanced water ripple effect for buttons
+  const waterButtons = document.querySelectorAll('.hero button, .project .card .action button');
+  waterButtons.forEach(button => {
+    button.classList.add('water-ripple-btn');
   });
 }
 

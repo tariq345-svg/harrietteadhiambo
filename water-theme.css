@@ -1,0 +1,592 @@
+/* Enhanced Mobile Responsiveness for Header and Footer */
+
+/* Header mobile styles */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 1.5rem;
+        height: auto;
+        min-height: 70px;
+    }
+
+    header .logo a {
+        font-size: 1.1rem;
+    }
+
+    .mobile-nav ul {
+        gap: 1.5rem;
+    }
+
+    .mobile-nav ul a {
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Footer mobile styles */
+@media (max-width: 768px) {
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    footer .container .profile,
+    footer .container .link-container {
+        width: 100%;
+    }
+
+    footer .container .link-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    footer .container .link-container .information,
+    footer .container .link-container .resource,
+    footer .container .link-container .navigation {
+        width: 100%;
+    }
+
+    footer .container .profile .social-media-container {
+        justify-content: center;
+    }
+
+    footer .container .profile .social-media {
+        width: 40px;
+        height: 40px;
+    }
+
+    footer .container .profile .social-media img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo a {
+        font-size: 1rem;
+    }
+
+    .mobile-nav ul a {
+        font-size: 1.3rem;
+    }
+    
+    footer .container .profile p {
+        font-size: 0.9rem;
+    }
+
+    footer h1 {
+        font-size: 1.5rem;
+    }
+
+    footer .container .link-container ul li a {
+        font-size: 1rem;
+    }
+}
+/* Additional styles for extreme mobile devices */
+@media (max-width: 380px) {
+    header {
+        padding: 0.75rem 1rem;
+    }
+
+    header .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .mobile-nav ul a {
+        font-size: 1.2rem;
+    }
+
+    footer .container {
+        padding: 1.5rem 1rem;
+    }
+
+    footer h1 {
+        font-size: 1.3rem;
+    }
+
+    footer .container .link-container ul li a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Water Research Theme Styles */
+
+/* Base styles */
+body {
+  background-color: #f0f8ff; /* AliceBlue - a very light, clean blue */
+  color: #333;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: #005f73; /* A deep teal/blue */
+}
+
+.title {
+  color: #005f73;
+}
+
+/* Header */
+header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #d0e0e3;
+}
+
+header .logo a,
+header nav a {
+  color: #005f73;
+}
+
+header nav a:hover,
+header .mobile-nav ul li a:hover {
+  color: #00796b; /* A slightly lighter teal for hover */
+}
+
+header nav a::after {
+  border-bottom: 1px solid #005f73;
+}
+
+header .extra-nav button {
+    border-color: #00796b;
+    color: #00796b;
+}
+
+header .extra-nav button:hover {
+  background-color: #00796b;
+  color: #fff;
+}
+
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #a2d2ff 0%, #bde0fe 100%);
+  color: #003e52;
+}
+
+.hero .container .content h1 {
+    color: #003e52;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero .container .content svg text {
+    stroke: #003e52;
+}
+
+.hero .container .content button {
+  background-color: #fff;
+  color: #005f73;
+  border: 2px solid #005f73;
+}
+
+.hero .container .content button span {
+    background-color: #fff;
+    color: #005f73;
+    border: 2px solid #005f73;
+    box-shadow: 0 0.4em 0.1em 0.019em #005f73;
+}
+
+
+/* About Section */
+.about {
+    background-color: #fff;
+}
+
+.about .container .content .about-me .profile .image-box {
+    background-color: #e0f7fa; /* Light cyan background for the image */
+    border: 4px solid #00796b;
+}
+
+.about .container .content .about-me .description .name-role .role h2 {
+    background-color: #00796b;
+    color: #fff;
+}
+
+.education-credentials,
+.professional-impact,
+.mission-vision,
+.key-achievements {
+  border-left: 4px solid #00796b;
+  background-color: #f0f8ff;
+}
+
+.education-credentials h4 i,
+.professional-impact h4 i,
+.mission-vision h4 i,
+.key-achievements h4 i {
+    color: #00796b;
+}
+
+.achievement-item .number {
+    color: #00796b;
+}
+
+
+/* Skills Section */
+.skill {
+    background-color: #f0f8ff;
+}
+
+.expertise-summary {
+    background: linear-gradient(135deg, #00796b 0%, #005f73 100%);
+}
+
+.skill-header i, .tool-icon, .expertise-item i, .cert-item i, .certifications-section h3 i {
+    color: #00796b;
+}
+
+.skill-progress {
+    background: linear-gradient(135deg, #00796b 0%, #005f73 100%);
+}
+
+.skill-level {
+    color: #005f73;
+}
+
+.tool-item:hover {
+    background-color: #00796b;
+}
+
+.expertise-item:hover {
+    background-color: #00796b;
+}
+
+
+/* Projects Section */
+.project {
+    background-color: #fff;
+}
+
+.project .container .content .projects .card {
+    border-left: 4px solid #00796b;
+}
+
+.project .container .content .projects .card .description .action button {
+    border: 2px solid #00796b;
+    color: #00796b;
+}
+
+.project .container .content .projects .card .description .action button:hover {
+    background: #00796b;
+    color: #fff;
+}
+
+
+/* Publications Section */
+.publications-section {
+    background-color: #f0f8ff;
+}
+
+.pub-summary {
+    background: linear-gradient(135deg, #00796b 0%, #005f73 100%);
+}
+
+.publication-item {
+    border-left: 4px solid #00796b;
+}
+
+.pub-btn {
+    background: #00796b;
+}
+
+.pub-btn:hover {
+    background: #005f73;
+}
+
+/* Blogs Section */
+.blogs-section {
+    background-color: #fff;
+}
+
+.blogs-summary {
+    background: linear-gradient(135deg, #00796b 0%, #005f73 100%);
+}
+
+.read-more {
+    color: #00796b;
+}
+
+.read-more:hover {
+    color: #005f73;
+}
+
+/* Footer */
+footer {
+    background: #004d40; /* Dark teal footer */
+    color: #e0f7fa; /* Light text on dark background */
+}
+
+footer a {
+    color: #fff;
+}
+
+footer a:hover {
+    color: #a2d2ff;
+}
+
+footer .container .link-container .information ul li::after,
+footer .container .link-container .resource ul li::after,
+footer .container .link-container .navigation ul li::after {
+  border-bottom-color: #a2d2ff;
+}
+
+
+/* Water-specific design elements */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://images.unsplash.com/photo-1559825481-12a05cc00344?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Wave effect for section dividers */
+.wave-divider {
+    position: relative;
+    height: 70px;
+    background: #f0f8ff;
+}
+
+.wave-divider::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-repeat: repeat-x;
+    height: 70px;
+    background-size: 70px 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 350 150" xmlns="http://www.w3.org/2000/svg" fill="%2300796b"><path d="M0,25 C175,150 350,0 500,25 L500,150 L0,150 Z" /></svg>');
+}
+
+/* Water ripple animation for buttons */
+.hero .container .content button,
+.project .container .content .projects .card .description .action button,
+.extra-nav button {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .container .content button::after,
+.project .container .content .projects .card .description .action button::after,
+.extra-nav button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.hero .container .content button:hover::after,
+.project .container .content .projects .card .description .action button:hover::after,
+.extra-nav button:hover::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    20% {
+        transform: scale(25, 25);
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
+}
+
+/* Water-themed skill items */
+.tool-item {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 121, 107, 0.1);
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #f0f8ff 0%, #e0f7fa 100%);
+    border-left: 3px solid #00796b;
+}
+
+.tool-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 121, 107, 0.2);
+}
+
+/* Enhance publication and blog items */
+.publication-item,
+.blog-post,
+.media-item,
+.commentary-item {
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 121, 107, 0.1);
+}
+
+.publication-item:hover,
+.blog-post:hover,
+.media-item:hover,
+.commentary-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 121, 107, 0.2);
+}
+
+/* Water-themed blog image placeholders */
+.blog-placeholder {
+    background: rgba(0, 121, 107, 0.2);
+}
+
+.blog-image {
+    background: linear-gradient(135deg, #00796b 0%, #005f73 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="%23ffffff" fill-opacity="0.1" d="M24.7,-41.2C33,-33.3,41.6,-28.7,47.9,-21.2C54.2,-13.7,58.2,-3.2,56.2,6.1C54.2,15.3,46.2,23.3,38.5,30.7C30.9,38.1,23.5,45,14.3,48.7C5.2,52.4,-5.7,53,-15.8,50.1C-25.9,47.2,-35.2,40.8,-42.5,32.4C-49.9,24,-55.3,13.7,-57.6,2.3C-59.9,-9.1,-59.1,-21.4,-53.3,-30.7C-47.6,-40.1,-36.8,-46.5,-26.2,-53.1C-15.5,-59.7,-4.9,-66.5,2.4,-70.1C9.7,-73.7,16.4,-49.1,24.7,-41.2Z" transform="translate(100 100)" /></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.7;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .project .container .content .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .wave-divider {
+        height: 50px;
+    }
+    
+    .wave-divider::before {
+        height: 50px;
+        background-size: 50px 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project .container .content .projects .card .description .action {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .project .container .content .projects .card .description .action button {
+        width: 100%;
+    }
+
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .findings-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .wave-divider {
+        height: 30px;
+    }
+    
+    .wave-divider::before {
+        height: 30px;
+        background-size: 30px 100%;
+    }
+}
+
+/* Water-specific animation for progress bars */
+.skill-progress {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: water-flow 2s infinite;
+    transform: translateX(-100%);
+}
+
+@keyframes water-flow {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Water ripple button effect */
+.water-ripple-btn {
+    position: relative;
+    z-index: 1;
+}
+
+.water-ripple-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+    transform: scale(0);
+    transition: transform 0.5s;
+    z-index: -1;
+    border-radius: inherit;
+}
+
+.water-ripple-btn:hover::before {
+    transform: scale(1.5);
+}
