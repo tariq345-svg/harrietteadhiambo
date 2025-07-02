@@ -197,3 +197,159 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+
+// Mobile Viewport Height Fix for iOS Safari
+function setViewportHeight() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+// Set on initial load
+setViewportHeight();
+
+// Update on resize and orientation change
+window.addEventListener('resize', setViewportHeight);
+window.addEventListener('orientationchange', () => {
+  setTimeout(setViewportHeight, 100);
+});
+
+// Touch-friendly hover effects for mobile
+function addTouchSupport() {
+  const touchElements = document.querySelectorAll('.project .card, .skill-category, .pub-item, .blog-post');
+  
+  touchElements.forEach(element => {
+    element.addEventListener('touchstart', function() {
+      this.classList.add('touch-active');
+    });
+    
+    element.addEventListener('touchend', function() {
+      setTimeout(() => {
+        this.classList.remove('touch-active');
+      }, 150);
+    });
+  });
+}
+
+// Initialize touch support
+addTouchSupport();
+
+// Improved smooth scrolling for navigation links
+function improvedSmoothScroll() {
+  const navLinks = document.querySelectorAll('a[href^="#"]');
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href !== '#') {
+        e.preventDefault();
+        
+        const target = document.querySelector(href);
+        if (target) {
+          const header = document.querySelector('header');
+          const headerHeight = header ? header.offsetHeight : 0;
+          const targetPosition = target.offsetTop - headerHeight - 20;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          
+          // Close mobile menu if open
+          if (nav && nav.classList.contains('show')) {
+            nav.classList.remove('show');
+            document.body.style.overflow = 'auto';
+          }
+        }
+      }
+    });
+  });
+}
+
+// Initialize improved smooth scrolling
+improvedSmoothScroll();
+
+// Optimize images for mobile
+function optimizeImagesForMobile() {
+  const images = document.querySelectorAll('img');
+  
+  images.forEach(img => {
+    img.addEventListener('load', function() {
+      this.style.opacity = '1';
+    });
+    
+    // Add lazy loading if not already present
+    if (!img.hasAttribute('loading')) {
+      img.setAttribute('loading', 'lazy');
+    }
+    
+    // Set initial opacity for fade-in effect
+    img.style.opacity = '0';
+    img.style.transition = 'opacity 0.3s ease';
+  });
+}
+
+// Initialize image optimization
+optimizeImagesForMobile();
+
+// Add mobile-specific CSS
+const mobileStyle = document.createElement('style');
+mobileStyle.textContent = `
+  /* Touch-friendly styles */
+  .touch-active {
+    transform: scale(0.98) !important;
+    transition: transform 0.1s ease !important;
+  }
+  
+  /* Fix for iOS Safari viewport height */
+  .hero {
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+  
+  /* Improve touch targets */
+  @media (max-width: 768px) {
+    button, .nav-link, .social-media, .pub-btn {
+      min-height: 44px;
+      min-width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Better spacing for touch */
+    .mobile-nav ul li {
+      padding: 0.5rem 0;
+    }
+    
+    /* Improve form inputs for mobile */
+    input, textarea {
+      font-size: 16px; /* Prevents zoom on iOS */
+      border-radius: 8px;
+    }
+    
+    /* Better button spacing */
+    .project .card .action {
+      gap: 1rem;
+    }
+    
+    .project .card .action button {
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Animation performance optimizations */
+  .skill-progress, .card, .skill-category {
+    will-change: transform;
+  }
+  
+  /* Reduce animations on low-performance devices */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+`;
+document.head.appendChild(mobileStyle);

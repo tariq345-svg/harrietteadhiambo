@@ -823,6 +823,14 @@ footer .container .link-container .navigation ul li a:hover {
 }
 
 @media screen and (max-width: 1024px) {
+  .container {
+    padding: 1rem 3rem;
+  }
+
+  header {
+    padding: 12px 24px;
+  }
+
   header nav,
   header .extra-nav {
     display: none;
@@ -833,7 +841,7 @@ footer .container .link-container .navigation ul li a:hover {
   }
 
   header .mobile-nav {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -843,29 +851,30 @@ footer .container .link-container .navigation ul li a:hover {
     right: 0;
     transform: translateY(-100%);
     height: 100vh;
-    background-color: #fff;
-    z-index: 999;
-    transition: all 0.2s linear;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 9999;
+    transition: all 0.3s ease;
   }
 
   header .mobile-nav.show {
     transform: translateY(0);
-    transition: all 0.2s linear;
+    transition: all 0.3s ease;
   }
 
   header .mobile-nav .close {
     position: absolute;
     top: 24px;
-    right: 16px;
+    right: 24px;
     display: flex;
     justify-content: end;
-    width: 100%;
+    width: auto;
   }
 
   header .mobile-nav .close svg {
     cursor: pointer;
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
   }
 
   header .mobile-nav ul {
@@ -873,36 +882,85 @@ footer .container .link-container .navigation ul li a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 2rem;
     width: 100%;
+    padding: 0;
+    margin: 0;
   }
 
   header .mobile-nav ul li {
     cursor: pointer;
     position: relative;
     list-style: none;
-    width: 25%;
+    width: auto;
+    text-align: center;
   }
 
   header .mobile-nav ul li a {
     color: #000;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 36px;
-    transition: 0.3s linear;
+    font-weight: 600;
+    font-size: 2rem;
+    transition: 0.3s ease;
+    display: block;
+    padding: 0.5rem 1rem;
   }
 
   header .mobile-nav ul li .nav-link::after {
     content: "";
     display: block;
-    border-bottom: 1px solid #000;
+    border-bottom: 2px solid #667eea;
     width: 0%;
-    transition: 0.3s linear;
+    transition: 0.3s ease;
+    margin: 0.5rem auto 0;
   }
 
   header .mobile-nav ul li:hover .nav-link::after {
     width: 100%;
-    transition: 0.3s linear;
+    transition: 0.3s ease;
+  }
+
+  header .mobile-nav ul li a:hover {
+    color: #667eea;
+  }
+
+  /* Hero section adjustments for tablets */
+  .hero .container .content svg text {
+    font-size: 100px;
+  }
+
+  .hero .container .content h1 {
+    font-size: 2.2rem;
+    width: 90%;
+  }
+
+  /* About section for tablets */
+  .about .container .content .about-me {
+    gap: 2rem;
+  }
+
+  .about .container .content .about-me .description .name-role h1 {
+    font-size: 2.5rem;
+  }
+
+  /* Skills grid adjustment */
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer adjustments */
+  footer .container {
+    padding: 3rem 2rem;
+    gap: 3rem;
+  }
+
+  footer .container .profile {
+    width: 30%;
+  }
+
+  footer .container .link-container {
+    width: 65%;
+    gap: 2rem;
   }
 
   footer .container .link-container .information ul li::after,
@@ -914,21 +972,90 @@ footer .container .link-container .navigation ul li a:hover {
 
 @media screen and (max-width: 768px) {
   .container {
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
+  }
+
+  /* Mobile Navigation Improvements */
+  header {
+    padding: 12px 20px;
+    height: 70px;
+  }
+
+  header .logo img {
+    width: 50px;
+    height: 50px;
+  }
+
+  header .logo a {
+    font-size: 16px;
+  }
+
+  header .hamburger-menu svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  header .mobile-nav {
+    padding: 2rem 1rem;
+  }
+
+  header .mobile-nav ul {
+    gap: 1.5rem;
+  }
+
+  header .mobile-nav ul li a {
+    font-size: 1.5rem;
+    padding: 0.75rem 1rem;
+  }
+
+  header .mobile-nav .close svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  /* Hero section mobile optimization */
+  .hero {
+    min-height: 90vh;
+    padding: 2rem 0;
+  }
+
+  .hero .container .content {
+    gap: 1rem;
+  }
+
+  .hero .container .content svg {
+    margin-bottom: -2rem;
   }
 
   .hero .container .content svg text {
-    font-size: 72px;
+    font-size: 60px;
   }
 
   .hero .container .content h1 {
     width: 100%;
-    font-size: 1.8rem;
-    line-height: 36px;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    margin-top: 2rem;
+  }
+
+  .hero .container .content button {
+    width: auto;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* About section mobile optimization */
+  .about {
+    padding: 2rem 0;
+  }
+
+  .about .container .content {
+    gap: 2rem;
   }
 
   .about .container .content .about-me {
     flex-direction: column;
+    gap: 2rem;
   }
 
   .about .container .content .about-me .profile,
@@ -938,31 +1065,210 @@ footer .container .link-container .navigation ul li a:hover {
 
   .about .container .content .about-me .profile .image-box {
     width: 100%;
-    height: 60vh;
+    height: 50vh;
+    margin: 0 auto;
+  }
+
+  .about .container .content .about-me .description .name-role h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .about .container .content .about-me .description .name-role .role {
+    justify-content: center;
+  }
+
+  .about .container .content .about-me .description .name-role .role h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  /* Skills section mobile */
+  .skill {
+    padding: 3rem 0;
   }
 
   .skill .container .content .skills {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;
+    gap: 1rem;
+  }
+
+  .skill .container .content .skills .skill-box {
+    height: 80px;
+  }
+
+  /* Projects section mobile */
+  .project {
+    padding: 3rem 0;
   }
 
   .project .container .content .projects {
     grid-template-columns: repeat(1, minmax(0, 1fr));
     width: 100%;
+    gap: 1.5rem;
+  }
+
+  .project .container .content .projects .card {
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .project .container .content .projects .card .description h3 {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+
+  .project .container .content .projects .card .description .action {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .project .container .content .projects .card .description .action button {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  /* Contact form mobile */
+  .contact {
+    padding: 3rem 0;
   }
 
   .contact .container .content .contact-form {
     width: 100%;
+    padding: 1.5rem;
+  }
+
+  .contact .container .content .contact-form .input {
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .contact .container .content .contact-form .input input {
     width: 100%;
   }
 
+  /* Footer mobile optimization */
+  footer {
+    padding: 2rem 0 1rem;
+  }
+
+  footer .container {
+    padding: 1.5rem;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  footer .container .profile {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer .container .profile .logo {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  footer .container .profile .logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  footer .container .profile .logo a {
+    font-size: 18px;
+  }
+
+  footer .container .profile p {
+    font-size: 0.9rem;
+    max-width: 300px;
+    margin: 0 auto 1rem;
+  }
+
+  footer .container .profile .social-media-container {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  footer .container .profile .social-media-container .social-media {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+
+  footer .container .link-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  footer .container .link-container .information,
+  footer .container .link-container .resource,
+  footer .container .link-container .navigation {
+    width: 100%;
+    text-align: center;
+  }
+
+  footer .container .link-container .information h1,
+  footer .container .link-container .resource h1,
+  footer .container .link-container .navigation h1 {
+    font-size: 1.2rem;
+    height: auto;
+    margin-bottom: 1rem;
+    justify-content: center;
+  }
+
+  footer .container .link-container .information ul,
+  footer .container .link-container .resource ul,
+  footer .container .link-container .navigation ul {
+    gap: 0.75rem;
+  }
+
   footer .container .link-container .information ul li::after,
   footer .container .link-container .resource ul li::after,
   footer .container .link-container .navigation ul li::after {
-    width: 100%;
+    width: 80%;
+    margin: 0.5rem auto 0;
+  }
+
+  footer .container .link-container .information ul li a,
+  footer .container .link-container .resource ul li a,
+  footer .container .link-container .navigation ul li a {
+    font-size: 0.95rem;
+  }
+
+  /* Sections padding */
+  .skill,
+  .project,
+  .timeline,
+  .publications-section,
+  .blogs-section {
+    padding: 3rem 0;
+  }
+
+  /* Title adjustments */
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Achievements grid mobile */
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .achievement-item {
+    padding: 1rem;
+  }
+
+  .achievement-item .number {
+    font-size: 1.5rem;
+  }
+
+  .achievement-item .label {
+    font-size: 0.8rem;
   }
 }
 
@@ -976,6 +1282,20 @@ footer .container .link-container .navigation ul li a:hover {
   footer .container .link-container .resource,
   footer .container .link-container .navigation {
     width: 30%;
+  }
+  
+  footer .container {
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+  
+  header .logo img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  header .logo a {
+    font-size: 16px;
   }
 }
 
@@ -1021,9 +1341,271 @@ footer .container .link-container .navigation ul li a:hover {
   footer .container .link-container .information,
   footer .container .link-container .resource,
   footer .container .link-container .navigation {
-    width: 50%;
+    width: 100%;
+    margin-bottom: 1.5rem;
   }
-}.social-media{
+  
+  header {
+    padding: 12px 20px;
+    height: 70px;
+  }
+  
+  header .hamburger-menu {
+    margin-left: auto;
+  }
+  
+  header .logo {
+    gap: 5px;
+  }
+  
+  .container {
+    padding: 1rem 1.25rem;
+  }
+  
+  footer .container {
+    padding: 2rem 1rem;
+  }
+  
+  footer .container .profile p {
+    font-size: 0.9rem;
+  }
+  
+  footer .container .link-container {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .achievement-item {
+    padding: 0.75rem;
+  }
+  
+  .hero .container .content button {
+    padding: 0.75rem 1.5rem;
+  }
+  
+  header .mobile-nav ul li {
+    width: 80%;
+    text-align: center;
+  }
+  
+  header .mobile-nav ul li a {
+    font-size: 24px;
+  }
+}
+
+/* Fix for extra small mobile devices */
+@media screen and (max-width: 380px) {
+  header {
+    padding: 10px 15px;
+    height: 65px;
+  }
+  
+  header .logo img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  header .logo a {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding: 1rem 1rem;
+  }
+  
+  .hero {
+    min-height: 85vh;
+    padding: 1.5rem 0;
+  }
+  
+  .hero .container .content svg text {
+    font-size: 32px;
+  }
+  
+  .hero .container .content h1 {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    width: 100%;
+  }
+  
+  .hero .container .content button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    width: auto;
+    min-width: 120px;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* About section adjustments */
+  .about .container .content .about-me .profile .image-box {
+    height: 40vh;
+  }
+  
+  .about .container .content .about-me .description .name-role h1 {
+    font-size: 1.8rem;
+  }
+  
+  .about .container .content .about-me .description .name-role .role h2 {
+    font-size: 1rem;
+    padding: 3px 5px;
+  }
+  
+  /* Footer adjustments */
+  footer {
+    padding: 1.5rem 0 1rem;
+  }
+  
+  footer .container {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+  
+  footer .container .profile .logo img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  footer .container .profile .logo a {
+    font-size: 16px;
+  }
+  
+  footer .container .profile p {
+    font-size: 0.85rem;
+    max-width: 280px;
+  }
+  
+  footer .container .profile .social-media-container .social-media {
+    width: 35px;
+    height: 35px;
+    padding: 6px;
+  }
+  
+  footer .container .link-container .information h1,
+  footer .container .link-container .resource h1,
+  footer .container .link-container .navigation h1 {
+    font-size: 1.1rem;
+  }
+  
+  footer .container .link-container .information ul li a,
+  footer .container .link-container .resource ul li a,
+  footer .container .link-container .navigation ul li a {
+    font-size: 0.9rem;
+  }
+  
+  /* Skills grid */
+  .skill .container .content .skills {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+  
+  .skill .container .content .skills .skill-box {
+    height: 70px;
+  }
+  
+  /* Projects section */
+  .project .container .content .projects .card {
+    padding: 1.25rem;
+  }
+  
+  .project .container .content .projects .card .description h3 {
+    font-size: 1rem;
+  }
+  
+  /* Mobile navigation */
+  header .mobile-nav ul li a {
+    font-size: 1.3rem;
+  }
+  
+  header .mobile-nav .close svg {
+    width: 30px;
+    height: 30px;
+  }
+  
+  /* Achievements grid */
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .achievement-item {
+    padding: 0.75rem;
+  }
+  
+  .achievement-item .number {
+    font-size: 1.3rem;
+  }
+  
+  .achievement-item .label {
+    font-size: 0.75rem;
+  }
+}
+
+/* Extreme mobile devices (below 320px) */
+@media screen and (max-width: 320px) {
+  .container {
+    padding: 0.75rem;
+  }
+  
+  header {
+    padding: 8px 12px;
+    height: 60px;
+  }
+  
+  header .logo {
+    gap: 3px;
+  }
+  
+  header .logo img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  header .logo a {
+    font-size: 12px;
+  }
+  
+  .hero .container .content svg text {
+    font-size: 28px;
+  }
+  
+  .hero .container .content h1 {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+  
+  .title {
+    font-size: 1.4rem;
+  }
+  
+  footer .container {
+    padding: 0.75rem;
+  }
+  
+  footer .container .profile .logo img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  footer .container .profile .logo a {
+    font-size: 14px;
+  }
+  
+  footer .container .profile p {
+    font-size: 0.8rem;
+    max-width: 260px;
+  }
+}
+
+.social-media{
   display: flex;
   justify-content: space-between;
   width: 100%;
