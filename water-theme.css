@@ -1,3 +1,32 @@
+/* Fix for progress bars on smaller screens */
+@media (max-width: 768px) {
+    .skill-item {
+        display: block;
+        width: 100%;
+    }
+
+    /* Fix for project images on smaller screens */
+    .project .container .content .projects .card img {
+        display: block; /* Ensure images are not hidden */
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Fix for social media icons on smaller screens */
+@media (max-width: 768px) {
+    footer .container .profile .social-media {
+        display: inline-block; /* Ensure icons are visible */
+        width: 40px;
+        height: 40px;
+    }
+
+    footer .container .profile .social-media img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
 /* Enhanced Mobile Responsiveness for Header and Footer */
 
 /* Header mobile styles */
